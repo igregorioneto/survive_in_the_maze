@@ -1,8 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:survive_in_the_maze/player/player.dart';
+import 'package:survive_in_the_maze/person/person.dart';
 
 class Starter extends StatefulWidget {
   const Starter({Key? key}) : super(key: key);
@@ -15,10 +13,16 @@ class _StarterState extends State<Starter> {
   @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
-      map: TiledWorldMap(
-        "maps/map.json",
+      joystick: Joystick(
+        directional: JoystickDirectional(),
       ),
-      player: PlayerGame(),
+      map: TiledWorldMap(
+        'maps/mapa.json',
+        forceTileSize: const Size(32, 32),
+      ),
+      player: Person(
+        Vector2(2 * 32, 8 * 32),
+      ),
     );
   }
 }
