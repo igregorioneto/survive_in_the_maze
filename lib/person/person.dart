@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
 import 'package:survive_in_the_maze/person/person_sprite_sheet.dart';
 
 class Person extends SimplePlayer with ObjectCollision {
@@ -21,5 +22,22 @@ class Person extends SimplePlayer with ObjectCollision {
         ),
       ]),
     );
+  }
+
+  @override
+  void render(Canvas canvas) {
+    drawDefaultLifeBar(
+      canvas,
+      borderWidth: 2,
+      height: 2,
+      align: const Offset(0, -5),
+    );
+    super.render(canvas);
+  }
+
+  @override
+  void die() {
+    removeFromParent();
+    super.die();
   }
 }
