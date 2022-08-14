@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:survive_in_the_maze/enemies/enemy_sprite_sheet.dart';
 
-class Boss extends SimpleEnemy with ObjectCollision {
+class Boss extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
   final Vector2 initPosition;
   double attack = 25;
 
@@ -32,16 +32,21 @@ class Boss extends SimpleEnemy with ObjectCollision {
 
   @override
   void update(double dt) {
-    simpleAttackMelee(
-      damage: 100,
-      size: Vector2(32, 32),
-    );
+    seePlayer(observed: (person) {
+      seeAndMoveToPlayer(
+        closePlayer: (person) {
+          simpleAttackMelee(
+            damage: 100,
+            size: Vector2(22, 22),
+          );
+        },
+        radiusVision: 32 * 3,
+        margin: 4,
+      );
+    }, notObserved: () {
+      runRandomMovement(dt);
+    });
 
-    seeAndMoveToPlayer(
-      closePlayer: (person) {},
-      radiusVision: 32 * 3,
-      margin: 4,
-    );
     super.update(dt);
   }
 
