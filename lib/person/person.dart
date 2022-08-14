@@ -38,6 +38,13 @@ class Person extends SimplePlayer with ObjectCollision {
   @override
   void die() {
     removeFromParent();
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text("Tente novamente!"),
+          );
+        });
     super.die();
   }
 }

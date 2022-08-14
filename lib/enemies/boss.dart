@@ -44,7 +44,11 @@ class Boss extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
         margin: 4,
       );
     }, notObserved: () {
-      runRandomMovement(dt);
+      runRandomMovement(
+        dt,
+        speed: 20,
+        timeKeepStopped: 1,
+      );
     });
 
     super.update(dt);
