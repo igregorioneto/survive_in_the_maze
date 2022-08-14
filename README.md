@@ -14,7 +14,7 @@
 
 <img src="https://img.shields.io/static/v1?label=SurviveInTheMaze&message=Greg%C3%B3rioNeto&color=7159c1&style=for-the-badge&logo=ghost">
 
-![SurviveInTheMaze](https://github.com/igregorioneto/my-bank/blob/main/assets/mybank.gif)
+![SurviveInTheMaze](https://github.com/igregorioneto/survive_in_the_maze/blob/main/assets/game.png)
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
@@ -47,7 +47,7 @@ Tecnologias:
 
 <p align="center">
 
-[Flutter](https://flutter.dev/) version 12.1.2.
+[Flutter](https://flutter.dev/)
 
 [Bonfire](https://bonfire-engine.github.io/#/)
 
