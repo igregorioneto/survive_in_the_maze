@@ -39,7 +39,7 @@ class Boss extends SimpleEnemy with ObjectCollision {
 
     seeAndMoveToPlayer(
       closePlayer: (person) {},
-      radiusVision: 32 * 2,
+      radiusVision: 32 * 3,
       margin: 4,
     );
     super.update(dt);
