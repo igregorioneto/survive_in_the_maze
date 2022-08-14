@@ -36,7 +36,7 @@ class Boss extends SimpleEnemy with ObjectCollision, AutomaticRandomMovement {
       seeAndMoveToPlayer(
         closePlayer: (person) {
           simpleAttackMelee(
-            damage: 100,
+            damage: 20,
             size: Vector2(22, 22),
           );
         },
